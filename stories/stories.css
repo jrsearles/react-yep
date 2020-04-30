@@ -1,0 +1,84 @@
+html {
+  box-sizing: border-box;
+  /* set default to 10px to simplify REM unit calculations */
+  font-size: 62.5%;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  color: #333;
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 1.4rem;
+}
+
+fieldset {
+  border: 0;
+  padding: 0.01em 0 0 0;
+  margin: 5px;
+  min-width: 0;
+}
+
+label {
+  display: block;
+  width: 10rem;
+}
+
+input[type="text"] {
+  border: 1px solid #ccc;
+  border-radius: 2px;
+  height: 3.2rem;
+  padding: 0.4rem;
+}
+
+button {
+  cursor: pointer;
+  border: 1px solid rgba(87, 97, 110, 0.5);
+  border-radius: 4px;
+  margin: 0.5rem;
+  min-width: 11.5rem;
+  padding: 6px 12px;
+}
+
+button:hover {
+  text-decoration: underline;
+}
+
+.yup-control {
+  margin: 0.8rem;
+  padding: 0;
+  position: relative;
+}
+
+.yup-control--required::before {
+  color: #e2870f;
+  content: "*";
+  font-size: 1.8rem;
+  left: -0.8rem;
+  position: absolute;
+}
+
+.yup-control--error {
+  border-color: rgba(242, 5, 5, 0.8) !important;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(208, 1, 27, 0.5) !important;
+}
+
+.yup-control--error[type="checkbox"] {
+  outline: 1px solid rgba(242, 5, 5, 0.8) !important;
+}
+
+.yup-error-list {
+  display: block;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.yup-error-list > li {
+  color: #d0021b;
+  margin: 0.2rem 0.5rem 0.5rem;
+}
