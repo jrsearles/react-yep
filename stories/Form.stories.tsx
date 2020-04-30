@@ -7,8 +7,7 @@ Control.defaultProps = {
   className: "yup-control",
   errorClassName: "yup-control--error",
   errorListClassName: "yup-error-list",
-  requiredClassName: "yup-control--required",
-  style: { display: "block" }
+  requiredClassName: "yup-control--required"
 };
 
 export default {

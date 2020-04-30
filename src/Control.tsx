@@ -69,7 +69,7 @@ export const Control = forwardRef<HTMLElement, PropsWithChildren<ControlProps>>(
       errorListClassName,
       requiredClassName,
       validationClasses,
-      style,
+      style: controlStyle,
       excludeAria = false,
       children
     },
@@ -109,6 +109,12 @@ export const Control = forwardRef<HTMLElement, PropsWithChildren<ControlProps>>(
           "aria-required": required
         };
 
+    let style = controlStyle;
+    if (!className && !style) {
+      // default to inline-block when no style is provided
+      style = { display: "inline-block" };
+    }
+
     const clone = cloneElement(child, {
       ...aria,
       className: clsx(child.props.className, errors && errorClassName),
@@ -133,4 +139,3 @@ export const Control = forwardRef<HTMLElement, PropsWithChildren<ControlProps>>(
   }
 );
 Control.displayName = "Control";
-Control.defaultProps = { style: { display: "inline-block" } };
