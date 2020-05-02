@@ -18,10 +18,12 @@
     "url": "https://github.com/jrsearles/react-yep/issues"
   },
   "scripts": {
+    "clean": "rimraf coverage dist",
     "build": "cross-env NODE_ENV=production rollup -c",
     "start": "yarn run storybook",
     "storybook": "start-storybook",
-    "test": "jest"
+    "test": "jest --coverage",
+    "ci": "yarn run test && yarn run build"
   },
   "keywords": [
     "react",
@@ -50,6 +52,7 @@
     "@types/react": "^16.9.33",
     "@types/react-dom": "^16.9.6",
     "@types/yup": "^0.28.0",
+    "@wessberg/rollup-plugin-ts": "^1.2.24",
     "babel-jest": "^25.5.0",
     "babel-loader": "^8.1.0",
     "cross-env": "^7.0.2",
@@ -59,8 +62,8 @@
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-test-renderer": "^16.13.1",
+    "rimraf": "^3.0.2",
     "rollup": "^2.7.3",
-    "rollup-plugin-babel": "^4.4.0",
     "rollup-plugin-node-resolve": "^5.2.0",
     "rollup-plugin-peer-deps-external": "^2.2.2",
     "typescript": "^3.8.3",

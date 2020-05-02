@@ -1,6 +1,6 @@
 import resolve from "rollup-plugin-node-resolve";
-import babel from "rollup-plugin-babel";
 import external from "rollup-plugin-peer-deps-external";
+import ts from "@wessberg/rollup-plugin-ts";
 import pkg from "./package.json";
 
 const extensions = [".js", ".jsx", ".ts", ".tsx"];
@@ -20,6 +20,6 @@ export default {
   plugins: [
     external({ includeDependencies: true }),
     resolve({ extensions }),
-    babel({ extensions, include: ["src/**/*"], runtimeHelpers: true })
+    ts({ transpiler: "babel" })
   ]
 };
