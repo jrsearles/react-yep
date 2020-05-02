@@ -1,5 +1,7 @@
 # React-Yep
 
+[![Coverage Status](https://coveralls.io/repos/github/jrsearles/react-yep/badge.svg?branch=master)](https://coveralls.io/github/jrsearles/react-yep?branch=master)
+
 A lightweight [React](https://reactjs.com) library which supports schema validation via [Yup](https://github.com/jquense/yup).
 
 Features included/excluded:
